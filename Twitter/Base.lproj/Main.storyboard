@@ -25,6 +25,7 @@
                                     <constraint firstAttribute="height" constant="54" id="AkN-1Z-Kl5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="onLoginButton:" destination="q9u-Ou-SbB" eventType="touchUpInside" id="IkV-QY-WUD"/>
@@ -49,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="-402.39999999999998" y="333.28335832083962"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="TtN-hB-nGe">
             <objects>
-                <tableViewController id="AQW-Ar-oBe" sceneMemberID="viewController">
+                <tableViewController id="AQW-Ar-oBe" customClass="HomeTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1sY-mn-rje">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +73,19 @@
                             <outlet property="delegate" destination="AQW-Ar-oBe" id="HT1-cA-IMg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Otp-cw-6mZ"/>
+                    <navigationItem key="navigationItem" title="Home" id="Otp-cw-6mZ">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" style="plain" id="NBK-lS-LXA">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wUH-Pi-kTt">
+                                <rect key="frame" x="16" y="13" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="AQW-Ar-oBe" id="e4y-8X-YtN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AyI-6c-rXv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -85,6 +98,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ufg-VK-1CF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="AQW-Ar-oBe" kind="relationship" relationship="rootViewController" id="IMi-pl-6Mv"/>
