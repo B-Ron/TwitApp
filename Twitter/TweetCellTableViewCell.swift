@@ -30,18 +30,17 @@ class TweetCellTableViewCell: UITableViewCell {
        
         let tobeFavorited = !favorited
         if(tobeFavorited){
-            TwitterAPICaller.client?.favoriteTweet(tweetId: tweetId, success: {
-                setFavorte(true)
+            TwitterAPICaller.client?.favoriteTweet(tweetId: tweetID, success: {
+                setFavorite(true)
             }, failure: { (error) in
                 print("Favorite did not succeed: \(error)")
             })
         } else{
-            TwitterAPICaller.client?.unfavoriteTweet(tweetId: tweetId, success: {
-                setFavorte(false)
+            TwitterAPICaller.client?.unfavoriteTweet(tweetId: tweetID, success: {
+                )setFavorite(false)
             }, failure: { (error) in
                 print("Unfavorite did not succeed: \(error)")
         }
-    
     }
    
     
@@ -54,7 +53,7 @@ class TweetCellTableViewCell: UITableViewCell {
             favButton.setImage(UIImage(named: "favor-icon"), for: UIControl.State.normal)
         }
     }
-    @IBAction func retweet(_ sender: Any) {
+        func retweet(_ sender: Any) {
         TwitterAPICaller.client?.favoriteTweet(tweetId: tweetID, success: {
             self.setRetweeted(true)
         }, failure: {(error) in
@@ -75,15 +74,16 @@ class TweetCellTableViewCell: UITableViewCell {
         }
     
     
-    override func awakeFromNib() {
+        func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
+        func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
 
+    }
 }
